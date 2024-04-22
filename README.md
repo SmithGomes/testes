@@ -57,4 +57,4 @@ Como você faria para descobrir, usando apenas duas idas até uma das salas das 
 
 5) Escreva um programa que inverta os caracteres de um string.
 
-<a href="http://angularjs.org">Inverte String</a>
+<a href="https://github.com/SmithGomes/testes/blob/main/inverte_string.html">Inverte String</a>
