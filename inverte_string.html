@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        * {
+            font-size: larger;
+            padding: 10px
+        }    
+    </style>
+<body>
+
+    <input id="e" type="text" value="" autofocus />
+    <h3 id="res"></h3>
+    <h3 id="s"></h3>
+
+<script>
+    var e = document.getElementById( "e" );
+        e.addEventListener( "keyup", function(){   invert_string( this.value ) } ) ;
+    
+    var res = document.getElementById( "res" );
+    var s = document.getElementById( "s" );
+
+
+    function invert_string( str ){
+        var inverted_str = "";
+        var len = str.length;
+        var i = len;
+        str = str.split("");
+        //s.textContent = len;
+
+        for( ; i > 0 ; i-- ){
+            inverted_str += str[ i-1 ];
+        }
+
+        res.textContent = inverted_str; // innerHTML = inverted_str;
+    }
+
+    
+</script>
+</body>
+</html>
+

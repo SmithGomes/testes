@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .divs {
+            width : 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+
+        .table {
+            height: 20px;
+            border: 1px solid blue;
+            display : flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .fibo{
+            border : 1px solid lime;
+            padding : 10px;
+        }
+
+        .td {
+            padding: 10px;
+        }
+    </style>
+<body>
+    <!--    Portanto, a sequência de Fibonacci é (1,1,2,3,5,8,13,21,34,55…)"
+            "Fn = Fn-1 + Fn-2, n≥3" -->
+
+<div>
+    <h4>Questao 1</h4>
+    <button id="q1" onclick="q1">Questao 1</button>
+
+    <div id="rq1">
+
+    </div>
+
+</div>
+<button id="start">Start</button>
+<button id="fibo">Fibo</button>
+<br>
+<table>
+    <tr class="tr"><td>1</td><td>2</td></tr>
+</table>
+<div class="table"></div>
+<div class="fibo"></div>
+
+<script>
+    const numbers = [];
+
+    document.getElementById("start").addEventListener("click", start);
+    document.getElementById("fibo").addEventListener("click", fibo);
+
+    function start(){
+        var r = document.createElement("div");
+            r.setAttribute( "class", "divs" );
+
+        var table = document.getElementsByClassName("table")[0];
+            table.appendChild(r);
+    
+    }
+
+    function fibo(){
+        var n1, n2;
+        var cell = document.createElement("td")
+        for( var i = 0; i < 15; i++ ){
+            if( i == 0 || i == 1 ) {
+                numbers.push(1);
+            }else{
+                n1 = numbers[i - 1];
+                n2 = numbers[i - 2];
+                numbers.push( n1 + n2 );
+            }
+        }
+
+        document.getElementsByClassName("fibo")[0].innerHTML = numbers.toString();
+        
+
+    }
+
+    function q1(){
+        let indice = 13, SOMA = 0, K = 0;
+
+        while( K < indice ) {
+            K = K + 1;
+            SOMA = SOMA + K;
+        }
+
+        printf( "%d", SOMA );
+        
+        var n1, n2;
+        let rq1 = document.getElementById( "rq1" );
+        var cell = document.createElement("td")
+        for( var i = 0; i < 15; i++ ){
+            if( i == 0 || i == 1 ) {
+                numbers.push(1);
+            }else{
+                n1 = numbers[i - 1];
+                n2 = numbers[i - 2];
+                numbers.push( n1 + n2 );
+            }
+        }
+
+        document.getElementsByClassName("fibo")[0].innerHTML = numbers.toString();
+        
+
+    }
+    
+</script>
+</body>
+</html>

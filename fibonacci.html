@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        input{
+            padding: 10px;
+            font-size: larger;
+        }   
+        tr {
+            display : flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        td {
+            height: 20px;
+            padding: 10px;
+            margin : 2px;
+            border-radius: 20%;
+            border: 1px solid blue;
+        }
+        td span {
+            position: relative;
+            top: -10px;
+            right: -6px;
+            color: red;
+            font-size: small;
+        }
+
+        .focus{
+            background-color: antiquewhite;
+        }
+    </style>
+<body>
+<input id="fibo" type="number" placeholder="Insira um numero" />
+<br>
+<table>
+    <tr class="tr"> </tr>
+</table>
+
+<script>
+    var numbers = [];
+    var focused;
+    
+    document.addEventListener( "load", fibo() ); 
+    document.getElementById("fibo").addEventListener( "change", function(){ 
+        is_fibo( this.value ) 
+    } );
+
+    function fibo( ){
+        var n1, n2;
+        var tr = document.getElementsByClassName("tr")[0];
+        var valor;
+
+        for( var i = 0; i <= 40; i++ ){
+            var td;
+            if( i == 0 || i == 1 ) {
+                numbers.push(1);
+            }else{
+                n1 = numbers[i - 1];
+                n2 = numbers[i - 2];
+                valor = n1 + n2;
+                numbers.push( valor );
+            }
+                
+            var span_index = document.createElement( "span" );
+                span_index.innerHTML = i;
+            
+            var td = document.createElement( "td" );    
+                td.setAttribute( "id", i );
+                td.innerHTML = numbers[ i ];
+                td.appendChild( span_index );
+                tr.appendChild(td);
+        }              
+    }
+
+
+    function is_fibo( num ){
+        var index_of = numbers.indexOf( Number( num ) );
+        focused = document.querySelector("td.focus") ? document.querySelector("td.focus").removeAttribute( "class" ) : "";
+
+        if( index_of !== -1 ) {
+            alert( num + " está na sequência")
+            focused = document.getElementById( index_of );
+            focused.setAttribute( "class", "focus" );
+        }else{
+            alert( num + " não faz parte da sequência" )
+            
+        }
+    }
+    
+</script>
+</body>
+</html>
+
