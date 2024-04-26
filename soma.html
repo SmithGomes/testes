@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        *{
+            padding: 10px;
+            font-size: larger;
+        }
+        label { margin-right: 10px }
+    </style>
+<body>
+<label for="resultado">(13)</label><input id="resultado" type="number" placeholder="Insira um numero" disabled /><br /><br />
+<button id="soma" onclick="imprimir()">Resultado</button>
+
+<script>
+    function imprimir( num ){
+        let INDICE = 13, SOMA = 0, K = 0;
+		
+		while( K < INDICE ){
+		    K = K + 1;
+		    SOMA = SOMA + K;
+		}
+
+        document.getElementById( "resultado" ).value = SOMA;
+    }
+</script>
+</body>
+</html>
