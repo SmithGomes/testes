@@ -5,15 +5,17 @@
             padding: 10px;
             font-size: larger;
         }
-        label { margin-right: 10px }
+        input { width: 60px; margin-right : 15px; }
     </style>
 <body>
-<label for="resultado">(13)</label><input id="resultado" type="number" placeholder="Insira um numero" disabled /><br /><br />
+<input id="inp_indice" type="number" value="13" />
+<input id="resultado" type="number" disabled /><br /><br />
 <button id="soma" onclick="imprimir()">Resultado</button>
 
 <script>
-    function imprimir( num ){
-        let INDICE = 13, SOMA = 0, K = 0;
+    function imprimir(){
+        let INDICE = document.getElementById( "inp_indice" ).value;
+        let SOMA = 0, K = 0;
 		
 		while( K < INDICE ){
 		    K = K + 1;
