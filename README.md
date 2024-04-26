@@ -48,7 +48,6 @@ f) 2, 10, 12, 16, 17, 18, 19, ____
 
 Como você faria para descobrir, usando apenas duas idas até uma das salas das lâmpadas, qual interruptor controla cada lâmpada?
 
-Ligando:
 	- 1 interruptor e checando qualquer lampada:
 		- caso esteja ligada, com apenas mais uma checagem chega-se a solução ( total 2 checagens )
 		- caso esteja desligada, obrigatoriamente, devo fazer mais duas checagens ( total 3 checagens )
